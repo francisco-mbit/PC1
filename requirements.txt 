@@ -1,0 +1,6 @@
+Librerías:
+
+requests → Peticiones HTTP y descargar archivos
+zipfile → Para manejar archivos ZIP
+io → Para manejar flujos de datos en memoria 
+pandas → Para manipulación y análisis de datos - DataFrames
