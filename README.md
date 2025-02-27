@@ -1,8 +1,64 @@
 # PC1: Consolidación de conocimientos de Pandas, SQL y NoSQL
 
-# Desarrollo del proyecto
+## Estructura del Proyecto
 
-El proyecto se ha desarrollado en un repositorio privado, los resultados se han recogido en este repo una vez finalizado.
+Este proyecto está organizado de la siguiente manera:
+
+```
+C1_GRUPO1/
+│── data/                      # Contiene los datos utilizados en el análisis
+│   │── wine_data.db            # Base de datos SQLite con los datos limpios
+│   │── winequality-red.csv     # Datos de vinos tintos
+│   │── winequality-white.csv   # Datos de vinos blancos
+│   │── winequality.names       # Descripción de los datos
+│
+│── notebooks/                 # Contiene los notebooks de análisis
+│   │── main_notebook.ipynb     # Notebook principal con todo el proceso
+│
+│── src/                       # Código fuente del proyecto
+│   │── E01_download_data.py    # Descarga de datos
+│   │── E02_combine_data.py     # Combinación de datos
+│   │── E03_clean_data.py       # Limpieza de datos
+│   │── E04_store_sqlite.py     # Almacenamiento en SQLite
+│   │── E05_queries_sqlite.py   # Consultas a la base de datos
+│   │── E06_export_json.py      # Exportación de datos a JSON
+│   │── E07_eda_wine_quality.py # Análisis exploratorio de calidad del vino
+│
+│── utils/                     # Funciones auxiliares (vacío)
+│   │── utils.py                # Funciones de apoyo
+│
+│── LICENSE                    # Licencia del proyecto
+│── README.md                   # Documentación general del proyecto
+```
+
+## Flujo de trabajo
+
+### **Carga de datos**: Descarga y lectura de los datasets.  
+
+EJ 1 - Carga de datos.
+
+EJ 2 - Combinar datasets.
+
+### **Preprocesamiento**: Limpieza y combinación de datos.  
+
+EJ 3 - Filtrar atípicos y manejar datos ausentes.
+
+### **Almacenamiento**: Inserción en SQLite y ejecución de consultas.  
+
+EJ 4 - Almacenar los datos limpios en SQLite.
+
+EJ 5 - Realizar 3 consultas en SQLite.
+
+### **Exportación**: Generación de archivos JSONLines para bases de datos NoSQL. 
+
+EJ 6 - Exportar datos a JSONLines.
+
+### **Análisis Exploratorio**: Identificación de patrones en la calidad del vino.  
+
+EJ 7 - Análisis de calidad de los vinos.
+
+
+Para ejecutar el flujo de trabajo completo, se recomienda abrir y seguir el notebook `main_notebook.ipynb`.
 
 ## Objetivo
 Este proyecto tiene como objetivo consolidar conocimientos sobre la manipulación de datos con Pandas, el manejo de bases de datos relacionales (SQLite) y la preparación de los datos para una posible inserción en bases de datos 
