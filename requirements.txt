@@ -1,5 +1,7 @@
-# Librerías:
-requests    # → Peticiones HTTP y descargar archivos
-zipfile     # → Para manejar archivos ZIP
-io          # → Para manejar flujos de datos en memoria 
-pandas      # → Para manipulación y análisis de datos - DataFrames
+requests
+numpy==1.23.5
+jsonlines==4.0.0
+matplotlib==3.7.1
+scipy==1.10.1
+seaborn==0.12.2
+pandas==1.5.3
