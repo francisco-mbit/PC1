@@ -1,5 +1,6 @@
 import pandas as pd
-
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # -------------------------------------------------------
 # Outliers separando tipos de vino
@@ -89,7 +90,6 @@ def detect_outliers_iqr(df, threshold=1.5):
     
     return df
 
-import pandas as pd
 
 def create_outlier_flag(df):
     """
@@ -108,4 +108,35 @@ def create_outlier_flag(df):
     df['outlier_flag'] = df[outlier_columns].any(axis=1)
     
     return df
+
+def plot_boxplots(df, category_col, columns_to_plot, num_cols=4):
+    """
+    Genera boxplots de múltiples columnas separadas por una categoría.
+
+    Args:
+        df (pd.DataFrame): DataFrame con los datos.
+        category_col (str): Nombre de la columna categórica (ej. 'wine_type').
+        columns_to_plot (list): Lista de columnas numéricas a graficar.
+        num_cols (int, opcional): Número de columnas en la cuadrícula de gráficos (default=4).
+
+    Returns:
+        None: Muestra los gráficos.
+    """
+    num_rows = -(-len(columns_to_plot) // num_cols)  # Redondeo hacia arriba
+    fig, axes = plt.subplots(num_rows, num_cols, figsize=(20, 5 * num_rows))
+    axes = axes.flatten()  # Convertir la matriz de ejes en lista
+
+    for i, column in enumerate(columns_to_plot):
+        sns.boxplot(data=df, x=category_col, y=column, ax=axes[i])
+        axes[i].set_title(f'Boxplot de {column} por {category_col}')
+        axes[i].set_xlabel(category_col)
+        axes[i].set_ylabel(column)
+
+    # Eliminar ejes vacíos si hay menos gráficos que espacios creados
+    for j in range(i + 1, len(axes)):
+        fig.delaxes(axes[j])
+
+    plt.tight_layout()
+    plt.show()
+
 
